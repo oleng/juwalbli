@@ -25,9 +25,11 @@
         border-top: 1px solid hsl(0, 0%, 78%);
         border-bottom: 1px solid #b7deda;
     }
-    .nav-bar {
-        height: 24px;
-        margin: 50px 3em 3em 0;
+    #nav-bar {
+        top: 50px;
+        position: inherit;
+        height: 5rem;
+        margin: 0 3em 3em 0;
         padding: 0 1em 1em 0;
     }
     .breadcrumb {
@@ -122,15 +124,24 @@
         background-color: #cdc9c7;
     }
     #thumbnails {
-        margin: 2em;
-        border-top: #cdc9c7;
+        margin: 0.75em 24px;
+        padding-top: 18px;
+        border-top: 1px solid #dcd9d8;
     }
     .thumbnail {
-
+        border-radius: 8px;
+        margin-right: 0.9rem;
+        border: 3px solid #dcd9d8;
     }
     h1#main-title {
-        margin: 12px 1.2rem !important;
+        margin: 12px 1.2rem 0px 1.2rem !important;
         font: 4em/1em 'Inter Black';
+    }
+    div.price {
+        width: calc(100% - 36px);
+        margin: 1rem 18px 0 18px;
+        /* text-align: right; */
+        font: 1.5em "Inter";
     }
   </style>
 
@@ -146,10 +157,14 @@
             <img src="img/sepeda.png" width="796px" height="732px" alt="">
             <div id="details">
                 <h1 id="main-title">Sepeda Cantik Warna Toska</h1>
-                <span class="price"><bdi>Rp 5.500.000</bdi></span>
-                <div id="thumbnails" class="panel-block ">
+                <div class="price red"><em>Rp 5.500.000</em></div>
+                <div id="thumbnails">
                     <img class="thumbnail" src="img/thumb1.png" width="120">
                     <img class="thumbnail" src="img/thumb2.png" width="120">
+                    <img class="thumbnail" src="img/thumb-empty.png" width="120">
+                    <img class="thumbnail" src="img/thumb-empty.png" width="120">
+                    <img class="thumbnail" src="img/thumb-empty.png" width="120">
+                    <img class="thumbnail" src="img/thumb-empty.png" width="120">
                 <!--
                     <p class="control has-icons-left">
                     <input class="input" type="text" placeholder="Search">
@@ -163,10 +178,10 @@
     </nav>
   <section class="section" id="section-right">
     <div class="container aqua">
-      <nav class="nav-bar aqua">
+      <div id="nav-bar">
           <img src="img/shopping-cart.png" class="float-right" width="24px" height="24px">
           <div class="breadcrumb">home / sepeda / bekas</div>
-      </nav>
+      </div>
       <article class="interactivity">
         <h1 class="title">
             Sepeda Cantik Warna Toska

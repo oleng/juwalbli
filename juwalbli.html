@@ -6,9 +6,11 @@
     <title>Juwal Bli</title>
     <link rel="stylesheet" href="bulma.css">
     <style>
-    body, .fullscreen {
+
+    /* body, .fullscreen {
         overflow-y: hidden;
-    }
+    } */
+    
     body::-webkit-scrollbar {
         display: none;
     }
@@ -17,67 +19,6 @@
         height: 100vh;
         margin: 0 0 0 952px;
         padding: 0 0 0 2.5em;
-    }
-    .aqua {
-        background: #b7deda;
-    }
-    .darker-grey {
-        border-top: 1px solid hsl(0, 0%, 78%);
-        border-bottom: 1px solid #b7deda;
-    }
-    #nav-bar {
-        top: 50px;
-        position: inherit;
-        height: 5rem;
-        margin: 0 3em 3em 0;
-        padding: 0 1em 1em 0;
-    }
-    .breadcrumb {
-        font-size: small;
-    }
-    .float-right {
-        float: right;
-    }
-    .interactivity {
-        width: 95%;
-    }
-    ins.icon-actions {
-        margin: 2em 0 8px 0;
-    }
-    .icon-actions > img {
-        margin-left: 12px;
-        width: 16px !important;
-        height: 16px !important;
-    }
-    .rules {
-        clear: both;
-    }
-    .red {
-        color: #fa534b
-    }
-    .red-bg {
-        color: #fff;
-        background-color: #fa534b
-    }
-    .red-bg:hover {
-        color: #fff;
-    }
-    button.blue-bg {
-        color: #fff;
-        background-color: #00398a;
-        cursor: default;
-    }
-    button.blue-bg:hover {
-        color: #fff;
-        cursor: pointer;
-    }
-    button.blue-bg:focus:not(:active) {
-        color: #fff;
-        box-shadow: 0 0 0 0.125em rgba(0, 57, 138, 0.25);
-    }
-    h2.price {
-        margin: 1em 0 0.5em 0;
-        font: 800 3.6em "Inter";
     }
     #half-width {
         border-radius: 0px !important;
@@ -135,13 +76,80 @@
     }
     h1#main-title {
         margin: 12px 1.2rem 0px 1.2rem !important;
-        font: 4em/1em 'Inter Black';
+        font: 900 4em/1em 'Poppins', 'Inter Black';
+        transition: all ease 1s;
+    }
+    .rules {
+        clear: both;
+    }
+    .red {
+        color: #fa534b
+    }
+    .red-bg {
+        color: #fff;
+        background-color: #fa534b
+    }
+    .red-bg:hover {
+        color: #fff;
+    }
+    .aqua {
+        background: #b7deda;
+    }
+    .darker-grey {
+        border-top: 1px solid hsl(0, 0%, 78%);
+        border-bottom: 1px solid #b7deda;
+    }
+    #nav-bar {
+        top: 50px;
+        position: inherit;
+        height: 5rem;
+        margin: 0 2.4em 3em 0;
+        padding: 0 1em 1em 0;
+    }
+    .breadcrumb {
+        font-size: small;
+    }
+    .float-right {
+        float: right;
+    }
+    .interactivity {
+        width: calc(100% - 5em);
+        color: rgb(74, 74, 74);
+        font: 1em/1.5em "DM Sans", Inter, Helvetica;
+    }
+    ins.icon-actions {
+        margin: 2em 0 8px 0;
+    }
+    .icon-actions > img {
+        margin-left: 12px;
+        width: 16px !important;
+        height: 16px !important;
+    }
+    button {
+        font-family: 'Poppins', 'Inter Black';
+    }
+    button.blue-bg {
+        color: #fff;
+        background-color: #00398a;
+        cursor: pointer;
+    }
+    button.blue-bg:hover {
+        color: #fff;
+        cursor: pointer;
+    }
+    button.blue-bg:focus:not(:active) {
+        color: #fff;
+        box-shadow: 0 0 0 0.125em rgba(0, 57, 138, 0.25);
+    }
+    h2.price {
+        margin: 1em 0 0.5em 0;
+        font: 700 3.6em 'Poppins', "Inter";
     }
     div.price {
         width: calc(100% - 36px);
-        margin: 1rem 18px 0 18px;
+        margin: .28rem 18px 0 18px;
         /* text-align: right; */
-        font: 1.5em "Inter";
+        font: 1.5em 'Poppins', "Inter";
     }
   </style>
 
@@ -157,11 +165,10 @@
             <img src="img/sepeda.png" width="796px" height="732px" alt="">
             <div id="details">
                 <h1 id="main-title">Sepeda Cantik Warna Toska</h1>
-                <div class="price red"><em>Rp 5.500.000</em></div>
+                <div class="price red">Rp 5.500.000</div>
                 <div id="thumbnails">
-                    <img class="thumbnail" src="img/thumb1.png" width="120">
+                    <img class="thumbnail" src="img/thumb1.png" width="120" aria-hidden="true">
                     <img class="thumbnail" src="img/thumb2.png" width="120">
-                    <img class="thumbnail" src="img/thumb-empty.png" width="120">
                     <img class="thumbnail" src="img/thumb-empty.png" width="120">
                     <img class="thumbnail" src="img/thumb-empty.png" width="120">
                     <img class="thumbnail" src="img/thumb-empty.png" width="120">
@@ -182,22 +189,21 @@
           <img src="img/shopping-cart.png" class="float-right" width="24px" height="24px">
           <div class="breadcrumb">home / sepeda / bekas</div>
       </div>
-      <article class="interactivity">
-        <h1 class="title">
-            Sepeda Cantik Warna Toska
-        </h2>
-        <p class="subtitle">
-            <small>Dilengkapi dengan keranjang di bagian depan sepeda.</small>
+      <section class="interactivity">
+        <p class="subtitle">Kelengkapan: keranjang di bagian depan
+            <br>
+            Warna: Toska
         </p>
-        <p class="grey-light">Didesain khusus untuk memenuhi tuntutan gaya hidup perkotaan yang serba praktis dan efisien.</p>
-        
+            <p>Cantik, kondisi masih seperti baru. Didesain khusus untuk memenuhi tuntutan gaya hidup perkotaan
+                <br>
+                yang serba praktis dan efisien.</p>
         <h2 class="price red">Rp 5.500.000</h2>
 
         <ins class="icon-actions opacity-medium float-right"><img src="img/share-btn.png" alt="Share link for product"><img src="img/bookmark.png" alt="Bookmark"></ins>
         <hr class="rules darker-grey">
         <button class="button is-large blue-bg"><strong>Selling</strong></button>
         <button class="button is-large red-bg"><strong>Buying</strong></button>
-      </article>
+    </section>
     </div>
   </section>
   </body>

@@ -5282,7 +5282,7 @@ button.dropdown-item.is-active {
   justify-content: center;
   overflow: hidden;
   position: fixed;
-  z-index: 40;
+  z-index: 50;
 }
 
 .modal.is-active {

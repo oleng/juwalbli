@@ -1,259 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html class="aqua">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Juwal Bli</title>
     <link rel="stylesheet" href="bulma.css">
+    <link rel="stylesheet" href="juwalbli.css">
     <script src="modal.js"></script>
-    <style>    
-    body::-webkit-scrollbar {
-        overflow-y: hidden;
-        display: none;
-    }
-
-    #section-right {
-        height: 100vh;
-        margin: 0 0 0 952px;
-        padding: 0 0 0 2.5em;
-    }
-    #front-half {
-        border-radius: 0px !important;
-        margin: 0;
-        padding: 0;
-        width: 952px;
-        position: fixed;
-        z-index: 10000;
-    }
-    #grey-vbar {
-        width: 36px;
-        height: 100vh;
-        background-color: #b1b4b4;
-        background-image:image("img/grey-bar.png");
-        border-color: #fa534b;
-    }
-    #blue-vbar {
-        top: 0px;
-        left: 36px;
-        width: 120px;
-        height: 100vh;
-        background-color: #00398a;
-        margin: 0;
-        padding: 0;
-        position: fixed;
-    }
-    #red-vbar {
-        width: 120px;
-        height: 153px;
-        bottom: 0px;
-        position: fixed;
-        margin: 0;
-        padding: 0;
-        background-color: #fa534b;
-    }
-    #product-section {
-        width: 796px;
-        height: 100vh;
-        top: 0;
-        left: 156px;
-        position: fixed;
-        margin: 0;
-        padding: 0;
-        background-color: #cdc9c7;
-    }
-    #thumbnails {
-        margin: 0.75em 24px;
-        padding-top: 18px;
-        border-top: 1px solid #dcd9d8;
-    }
-    .thumbnail {
-        border-radius: 8px;
-        margin-right: 0.9rem;
-        border: 3px solid #dcd9d8;
-    }
-    h1#main-title {
-        margin: 12px 1.2rem 0px 1.2rem !important;
-        font: 900 4em/1em 'Poppins', 'Inter Black';
-        transition: all ease 1s;
-    }
-    .rules {
-        clear: both;
-    }
-    .red {
-        color: #fa534b
-    }
-    .red-bg {
-        color: #fff;
-        background-color: #fa534b
-    }
-    .red-bg:hover {
-        color: #fff;
-    }
-    .aqua {
-        background: #b7deda;
-    }
-    hr, .darker-grey {
-        border-top: 1px solid hsl(204, 4%, 64%) !important;
-        border-bottom: 1px solid #b7deda;
-    }
-    #nav-bar {
-        top: 50px;
-        position: inherit;
-        height: 5rem;
-        margin: 0 2.4em 3em 0;
-        padding: 0 1em 1em 0;
-        z-index: 100;
-    }
-    .breadcrumb {
-        font-size: small;
-    }
-    .float-right {
-        float: right;
-    }
-    .interactivity {
-        width: calc(100% - 5em);
-        color: rgb(74, 74, 74);
-        font: 1.1em/1.5em "DM Sans", Inter, Helvetica;
-    }
-    .interactivity p.subtitle {
-        color: rgb(90, 90, 90);
-        font-weight: 500;
-    }
-    ins.icon-actions {
-        margin: 2em 0 8px 0;
-    }
-    .icon-actions > img {
-        margin-left: 12px;
-        width: 16px !important;
-        height: 16px !important;
-    }
-    a, button {
-        font-family: 'Poppins', 'Inter Black';
-    }
-    .blue-bg {
-        color: #fff;
-        background-color: #00398a;
-    }
-    .blue-bg:hover {
-        color: #fff;
-    }
-    .blue-bg:focus:not(:active) {
-        color: #fff;
-        box-shadow: 0 0 0 0.125em rgba(0, 57, 138, 0.25);
-    }
-    h2.price {
-        margin: 1em 0 0.5em 0;
-        font: 700 3.6em 'Poppins', "Inter";
-    }
-    div.price {
-        width: calc(100% - 36px);
-        margin: .28rem 18px 0 18px;
-        /* text-align: right; */
-        font: 1.5em 'Poppins', "Inter";
-    }
-    #modal {
-        top: 6rem;
-        left: calc(952px + 2.5em);
-        width: calc(100% - 952px - 6rem);
-        height: min-content;
-        background-color: rgba(246, 246, 246, 1);
-        border-radius: .72rem;
-        box-shadow: 0 2px 5px 0 rgba(8, 8, 8, 0.232),0 2px 5px 0 rgba(8, 8, 8, 0.112);
-        z-index: 500;
-    }
-    .modal-content, .modal-card {
-        margin: 0 20px;
-        max-height: calc(100vh - 160px);
-        overflow: auto;
-        position: relative;
-        width: 100%;
-    }
-    .card {
-        font: 1em/1.35em "DM Sans", Inter, Helvetica;
-        background-color: rgba(246, 246, 246, 1);
-    }
-    .card a, .card a:hover, .card a:focus {
-        color: inherit;
-    }
-    .card-content {
-        margin-top: 0;
-        margin-bottom: 0.05rem;
-        padding-bottom: 1rem;
-    }
-    .card-content .content {
-        margin-left: 4rem;
-        margin-top: 0;
-        margin-bottom: 0.75rem;
-        padding: 0;
-    }
-    .card-content title {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        padding-bottom: 0.15rem;
-    }
-    .card-content .subtitle{
-        color: rgb(120, 120, 120);
-    }
-    time {
-        color: rgb(180, 180, 180);
-        font-size: 11px;
-        float: right;
-    }
-    .card-search {
-        --theme-ui-colors-primary: var(--theme-ui-colors-primary,#0066ff);
-        --theme-ui-colors-text: var(--theme-ui-colors-text,#2f363d);
-        --theme-ui-colors-background: var(--theme-ui-colors-background,#fff);
-        --theme-ui-colors-muted: var(--theme-ui-colors-muted,#f6f8fa);
-        --theme-ui-colors-border: var(--theme-ui-colors-border,#d1d5da);
-        --theme-ui-colors-icon: var(--theme-ui-colors-icon,#959da5);
-        box-sizing: inherit;
-        width: 100%;
-        margin: 0;
-        padding: 16px;
-        padding-left: 52px;
-        font-size: inherit;
-        line-height: 1;
-        font-family: inherit;
-        color: inherit;
-        background-color: var(--theme-ui-colors-background,#fff);
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 2px 0 rgba(0,0,0,0.09);
-        border: 0;
-        appearance: none;
-        outline: 0;
-        border-radius: 6px;
-        color: #dcd9d8;
-    }
-    .search-box {
-        /*  */
-        padding: 1rem;
-        margin-bottom: 0.75rem;
-    }
-    #search-icon {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 28px;
-        display: flex;
-        -webkit-box-align: center;
-        align-items: center;
-        opacity: 72%
-    }
-    .image.is-square img {
-        top: 116px;
-        left: calc(992px + 188px + 2.5em);
-        width: fit-content;
-        height: min-content;
-    }
-    .modal-content,
-    .modal-card {
-        margin: 0 20px;
-        max-height: calc(100vh - 160px);
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-    }
-  </style>
-
   </head>
   <body class="fullscreen aqua">
     <nav class="panel" id="front-half">
@@ -280,35 +33,34 @@
             </div>
         </div>
     </nav>
-  <section class="section" id="section-right">
-    <div class="container aqua">
+    <section class="section aqua" id="section-right">
+      <div class="aqua">
         <div id="nav-bar">
             <img src="img/shopping-cart.png" class="float-right" width="24px" height="24px">
             <div class="breadcrumb">home / sepeda / bekas</div>
         </div>
-        <section class="interactivity is-active" aria-hidden="false">
-            <p class="subtitle">Kelengkapan: keranjang di bagian depan
+        <section id="desc" class="is-active">
+            <h2 class="title">Kelengkapan: keranjang di bagian depan
                 <br>
                 Warna: Toska
-            </p>
+            </h2>
                 <p>Cantik, kondisi masih seperti baru. Didesain khusus untuk memenuhi tuntutan gaya hidup perkotaan
-                    <br>
-                    yang serba praktis dan efisien.</p>
+                yang serba praktis dan efisien.</p>
             <h2 class="price red">Rp 5.500.000</h2>
 
             <ins class="icon-actions opacity-medium float-right"><img src="img/share-btn.png" alt="Share link for product"><img src="img/bookmark.png" alt="Bookmark"></ins>
             <hr class="rules darker-grey">
-            <a class="button is-large blue-bg modal-button" data-target="modal"><strong>Selling</strong></a>
+            <a id="open-chat" class="button is-large blue-bg modal-button" data-target="modal-chat"><strong>Selling</strong></a>
             <button class="button is-large red-bg"><strong>Buying</strong></button>
         </section>
         <!-- Modal -->
-        <div id="modal" class="modal" aria-hidden="true">
-            <div class="modal-content">
-                <div class="control has-icons-left search-box">
+        <div id="modal-chat" class="modal-chat">
+            <div class="modal-chat-wrapper">
+                <div class="search-box">
                     <div id="search-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-1hy7qas"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
                     <input type="search" aria-label="Search" placeholder="Cari chatmu di sini" value="" class="card-search">
                 </div>
-                <div class="card">
+                <card class="card">
                     <a class="modal-button" data-target="andrian">
                     <div class="card-content">
                         <div class="media">
@@ -319,21 +71,19 @@
                             </div>
                             <div class="media-content">
                             <p class="title is-4">Andrian</p>
-                            <p class="subtitle is-6">@andrigamerz</p>
+                            <p class="subtitle is-6">@ndriangamerz</p>
                             </div>
                         </div>      
                         <div class="content">
-                            <time>1 hours ago</time>
                             siang kak,
                         </div>
                         <div class="content">
-                            <time>1 hours ago</time>
                             Sepedanya saya bayarin 5 jt dilepas gak kak??
                         </div>
                     </div>
                     </a>
-                </div>
-                <div class="card">
+                </card>
+                <card class="card">
                     <a class="modal-button" data-target="minto" style="width: 100%">
                     <div class="card-content">
                         <div class="media">
@@ -348,20 +98,18 @@
                             </div>
                         </div>
                         <div class="content">
-                            <time>9 hours ago</time>
-                            Hallo kak,
-                            <br>kalo boleh sepedanya 4,8 jt 💵 CASH 💵 
+                            Hallo kak, kalo boleh sepedanya 4,8 jt 💵 CASH 💵 
                         </div>
                     </div>
                     </a>
-                </div>
-                <div class="card">
+                </card>
+                <card class="card">
                     <a class="modal-button" data-target="adinda">
                     <div class="card-content">
                         <div class="media">
                             <div class="media-left">
                             <figure class="image is-48x48">
-                                <img src="img/adinda-th.png" alt="Placeholder image">
+                                <img src="img/adinda-th.png" alt="">
                             </figure>
                             </div>
                             <div class="media-content">
@@ -370,18 +118,16 @@
                             </div>
                         </div>      
                         <div class="content">
-                            <time>16 hours ago</time>
                             Hai kak, aku minat sepedanya,
                         </div>
                         <div class="content">
-                            <time>15 hours ago</time>
                             4 juta ya kak 🥺
                         </div>
                     </div>
-                </a>
-                </div>
+                    </a>
+                </card>
             </div>
-            <div id="andrian" class="modal">
+            <figure id="andrian" class="modal">
                 <div class="modal-background"></div>
                 <div class="modal-content">
                   <p class="image is-square">
@@ -389,8 +135,8 @@
                   </p>
                 </div>
                 <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-            <div id="minto" class="modal">
+            </figure>
+            <figure id="minto" class="modal">
                 <div class="modal-background"></div>
                 <div class="modal-content">
                   <p class="image is-square">
@@ -398,8 +144,8 @@
                   </p>
                 </div>
                 <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-            <div id="adinda" class="modal">
+            </figure>
+            <figure id="adinda" class="modal">
                 <div class="modal-background"></div>
                 <div class="modal-content">
                   <p class="image is-square">
@@ -407,11 +153,10 @@
                   </p>
                 </div>
                 <button class="modal-close is-large" aria-label="close"></button>
-            </div>
+            </figure>
         </div>
         <!-- /Modal -->
-    </div>
-  </section>
-
+      </div>
+    </section>
   </body>
 </html>

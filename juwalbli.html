@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Juwal Bli</title>
     <link rel="stylesheet" href="bulma.css">
-    <link rel="stylesheet" href="modal.css">
     
     <style>    
     body::-webkit-scrollbar {
@@ -45,7 +44,7 @@
     }
     #red-vbar {
         width: 120px;
-        height: 156px;
+        height: 153px;
         bottom: 0px;
         position: fixed;
         margin: 0;
@@ -93,8 +92,8 @@
     .aqua {
         background: #b7deda;
     }
-    .darker-grey {
-        border-top: 1px solid hsl(0, 0%, 78%);
+    hr, .darker-grey {
+        border-top: 1px solid hsl(204, 4%, 64%) !important;
         border-bottom: 1px solid #b7deda;
     }
     #nav-bar {
@@ -115,6 +114,10 @@
         color: rgb(74, 74, 74);
         font: 1.1em/1.5em "DM Sans", Inter, Helvetica;
     }
+    .interactivity p.subtitle {
+        color: rgb(90, 90, 90);
+        font-weight: 500;
+    }
     ins.icon-actions {
         margin: 2em 0 8px 0;
     }
@@ -123,17 +126,17 @@
         width: 16px !important;
         height: 16px !important;
     }
-    button {
+    a, button {
         font-family: 'Poppins', 'Inter Black';
     }
-    button.blue-bg {
+    .blue-bg {
         color: #fff;
         background-color: #00398a;
     }
-    button.blue-bg:hover {
+    .blue-bg:hover {
         color: #fff;
     }
-    button.blue-bg:focus:not(:active) {
+    .blue-bg:focus:not(:active) {
         color: #fff;
         box-shadow: 0 0 0 0.125em rgba(0, 57, 138, 0.25);
     }
@@ -147,13 +150,27 @@
         /* text-align: right; */
         font: 1.5em 'Poppins', "Inter";
     }
+    time {
+        color: dimgray;
+        font-size: x-small;
+        float: right;
+    }
     #modal {
-        width: calc(100% - 5em);
-        border-radius: 6px;
-        background-color: #f6f8fa;
+        width: calc(100% - 5rem);
+        background-color: rgba(246, 246, 246, 1);
+        border-radius: 1rem;
+        box-shadow: 0 2px 5px 0 rgba(8, 8, 8, 0.232),0 2px 5px 0 rgba(8, 8, 8, 0.112);
+    }
+    .modal-content, .modal-card {
+        margin: 0 20px;
+        max-height: calc(100vh - 160px);
+        overflow: auto;
+        position: relative;
+        width: 100%;
     }
     .card {
         font: 1em/1.35em "DM Sans", Inter, Helvetica;
+        background-color: rgba(246, 246, 246, 1);
     } 
     .card-content {
         margin-top: 0;
@@ -188,29 +205,27 @@
         font-family: inherit;
         color: inherit;
         background-color: var(--theme-ui-colors-background,#fff);
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 2px 0 rgba(0,0,0,0.09);
         border: 0;
         appearance: none;
         outline: 0;
         border-radius: 6px;
+        color: #dcd9d8;
     }
     .search-box {
-        margin-bottom: 2rem;
-        padding-bottom: 1rem;
+        /*  */
+        padding: 1rem;
+        margin-bottom: 0.75rem;
     }
     #search-icon {
         position: absolute;
         top: 0;
         bottom: 0;
-        left: 16px;
+        left: 28px;
         display: flex;
         -webkit-box-align: center;
         align-items: center;
-    }
-    time {
-        color: dimgray;
-        font-size: x-small;
-        float: right;
+        opacity: 72%
     }
   </style>
 
@@ -246,7 +261,7 @@
             <img src="img/shopping-cart.png" class="float-right" width="24px" height="24px">
             <div class="breadcrumb">home / sepeda / bekas</div>
         </div>
-        <section class="interactivity">
+        <section class="interactivity is-active" aria-hidden="false">
             <p class="subtitle">Kelengkapan: keranjang di bagian depan
                 <br>
                 Warna: Toska
@@ -258,79 +273,81 @@
 
             <ins class="icon-actions opacity-medium float-right"><img src="img/share-btn.png" alt="Share link for product"><img src="img/bookmark.png" alt="Bookmark"></ins>
             <hr class="rules darker-grey">
-            <button class="button is-large blue-bg"><a href="#modal-one"><strong>Selling</strong></a></button>
+            <a class="button is-large blue-bg modal-button" data-target="modal"><strong>Selling</strong></a>
             <button class="button is-large red-bg"><strong>Buying</strong></button>
         </section>
         <!-- Modal -->
-        <div id="modal">
-            <div class="card">
-                <div class="card-content">
-                    <div class="control has-icons-left search-box">
-                        <div id="search-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-1hy7qas"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
-                        <input type="search" aria-label="Search" placeholder="Cari chatmu" value="" class="card-search">
-                    </div>
-                <div class="media">
-                    <div class="media-left">
-                    <figure class="image is-48x48">
-                        <img src="img/andrian-th.png" alt="Andrian">
-                    </figure>
-                    </div>
-                    <div class="media-content">
-                    <p class="title is-4">Andrian</p>
-                    <p class="subtitle is-6">@andrigamerz</p>
-                    </div>
-                </div>      
-                <div class="content">
-                    <time>1h ago</time>
-                    siang kak,
+        <div id="modal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <div class="control has-icons-left search-box">
+                    <div id="search-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-1hy7qas"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    <input type="search" aria-label="Search" placeholder="Cari chatmu di sini" value="" class="card-search">
                 </div>
-                <div class="content">
-                    <time>1h ago</time>
-                    Sepedanya saya bayarin 5 jt dilepas gak kak??
-                </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                    <figure class="image is-48x48">
-                        <img src="img/minto-th.png" alt="Minto">
-                    </figure>
-                    </div>
-                    <div class="media-content">
-                    <p class="title is-4">Minto</p>
-                    <p class="subtitle is-6">@mintobike08</p>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="img/andrian-th.png" alt="Andrian">
+                            </figure>
+                            </div>
+                            <div class="media-content">
+                            <p class="title is-4">Andrian</p>
+                            <p class="subtitle is-6">@andrigamerz</p>
+                            </div>
+                        </div>      
+                        <div class="content">
+                            <time>1h ago</time>
+                            siang kak,
+                        </div>
+                        <div class="content">
+                            <time>1h ago</time>
+                            Sepedanya saya bayarin 5 jt dilepas gak kak??
+                        </div>
                     </div>
                 </div>
-                <div class="content">
-                    <time>9h ago</time>
-                    Hallo kak,
-                    <br>kalo boleh sepedanya 4,8 jt 💵 CASH 💵 
-                </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                    <figure class="image is-48x48">
-                        <img src="img/adinda-th.png" alt="Placeholder image">
-                    </figure>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="img/minto-th.png" alt="Minto">
+                            </figure>
+                            </div>
+                            <div class="media-content">
+                            <p class="title is-4">Minto</p>
+                            <p class="subtitle is-6">@mintobike08</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <time>9h ago</time>
+                            Hallo kak,
+                            <br>kalo boleh sepedanya 4,8 jt 💵 CASH 💵 
+                        </div>
                     </div>
-                    <div class="media-content">
-                    <p class="title is-4">Adinda</p>
-                    <p class="subtitle is-6">@dindaa</p>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="img/adinda-th.png" alt="Placeholder image">
+                            </figure>
+                            </div>
+                            <div class="media-content">
+                            <p class="title is-4">Adinda</p>
+                            <p class="subtitle is-6">@dindaa</p>
+                            </div>
+                        </div>      
+                        <div class="content">
+                            <time>16h ago</time>
+                            Hai kak, aku minat sepedanya,
+                        </div>
+                        <div class="content">
+                            <time>15h ago</time>
+                            4 juta ya kak 🥺
+                        </div>
                     </div>
-                </div>      
-                <div class="content">
-                    <time>16h ago</time>
-                    Hai kak, aku minat sepedanya,
-                </div>
-                <div class="content">
-                    <time>15h ago</time>
-                    4 juta ya kak 🥺
-                </div>
                 </div>
             </div>
         </div>

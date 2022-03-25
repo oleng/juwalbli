@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Juwal Bli</title>
     <link rel="stylesheet" href="bulma.css">
-    
+    <script src="modal.js"></script>
     <style>    
     body::-webkit-scrollbar {
         overflow-y: hidden;
@@ -102,6 +102,7 @@
         height: 5rem;
         margin: 0 2.4em 3em 0;
         padding: 0 1em 1em 0;
+        z-index: 100;
     }
     .breadcrumb {
         font-size: small;
@@ -150,16 +151,15 @@
         /* text-align: right; */
         font: 1.5em 'Poppins', "Inter";
     }
-    time {
-        color: dimgray;
-        font-size: x-small;
-        float: right;
-    }
     #modal {
-        width: calc(100% - 5rem);
+        top: 6rem;
+        left: calc(952px + 2.5em);
+        width: calc(100% - 952px - 6rem);
+        height: min-content;
         background-color: rgba(246, 246, 246, 1);
-        border-radius: 1rem;
+        border-radius: .72rem;
         box-shadow: 0 2px 5px 0 rgba(8, 8, 8, 0.232),0 2px 5px 0 rgba(8, 8, 8, 0.112);
+        z-index: 500;
     }
     .modal-content, .modal-card {
         margin: 0 20px;
@@ -171,7 +171,10 @@
     .card {
         font: 1em/1.35em "DM Sans", Inter, Helvetica;
         background-color: rgba(246, 246, 246, 1);
-    } 
+    }
+    .card a, .card a:hover, .card a:focus {
+        color: inherit;
+    }
     .card-content {
         margin-top: 0;
         margin-bottom: 0.05rem;
@@ -183,10 +186,18 @@
         margin-bottom: 0.75rem;
         padding: 0;
     }
-    .card-content .subtitle .is-6, .card .title {
+    .card-content title {
         margin-top: 0;
         margin-bottom: 1rem;
-        padding-bottom: 0;
+        padding-bottom: 0.15rem;
+    }
+    .card-content .subtitle{
+        color: rgb(120, 120, 120);
+    }
+    time {
+        color: rgb(180, 180, 180);
+        font-size: 11px;
+        float: right;
     }
     .card-search {
         --theme-ui-colors-primary: var(--theme-ui-colors-primary,#0066ff);
@@ -226,6 +237,20 @@
         -webkit-box-align: center;
         align-items: center;
         opacity: 72%
+    }
+    .image.is-square img {
+        top: 116px;
+        left: calc(992px + 188px + 2.5em);
+        width: fit-content;
+        height: min-content;
+    }
+    .modal-content,
+    .modal-card {
+        margin: 0 20px;
+        max-height: calc(100vh - 160px);
+        overflow: hidden;
+        position: relative;
+        width: 100%;
     }
   </style>
 
@@ -284,6 +309,7 @@
                     <input type="search" aria-label="Search" placeholder="Cari chatmu di sini" value="" class="card-search">
                 </div>
                 <div class="card">
+                    <a class="modal-button" data-target="andrian">
                     <div class="card-content">
                         <div class="media">
                             <div class="media-left">
@@ -297,16 +323,18 @@
                             </div>
                         </div>      
                         <div class="content">
-                            <time>1h ago</time>
+                            <time>1 hours ago</time>
                             siang kak,
                         </div>
                         <div class="content">
-                            <time>1h ago</time>
+                            <time>1 hours ago</time>
                             Sepedanya saya bayarin 5 jt dilepas gak kak??
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="card">
+                    <a class="modal-button" data-target="minto" style="width: 100%">
                     <div class="card-content">
                         <div class="media">
                             <div class="media-left">
@@ -320,13 +348,15 @@
                             </div>
                         </div>
                         <div class="content">
-                            <time>9h ago</time>
+                            <time>9 hours ago</time>
                             Hallo kak,
                             <br>kalo boleh sepedanya 4,8 jt 💵 CASH 💵 
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="card">
+                    <a class="modal-button" data-target="adinda">
                     <div class="card-content">
                         <div class="media">
                             <div class="media-left">
@@ -340,19 +370,48 @@
                             </div>
                         </div>      
                         <div class="content">
-                            <time>16h ago</time>
+                            <time>16 hours ago</time>
                             Hai kak, aku minat sepedanya,
                         </div>
                         <div class="content">
-                            <time>15h ago</time>
+                            <time>15 hours ago</time>
                             4 juta ya kak 🥺
                         </div>
                     </div>
+                </a>
                 </div>
+            </div>
+            <div id="andrian" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                  <p class="image is-square">
+                    <img src="img/andrian-pop.png" width="240px" alt="">
+                  </p>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+            <div id="minto" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                  <p class="image is-square">
+                    <img src="img/minto-pop.png" width="240px" alt="">
+                  </p>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+            <div id="adinda" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                  <p class="image is-square">
+                    <img src="img/adinda-pop.png" width="240px" alt="">
+                  </p>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
             </div>
         </div>
         <!-- /Modal -->
     </div>
   </section>
+
   </body>
 </html>

@@ -147,9 +147,13 @@
         /* text-align: right; */
         font: 1.5em 'Poppins', "Inter";
     }
+    #modal {
+        width: calc(100% - 5em);
+        border-radius: 6px;
+        background-color: #f6f8fa;
+    }
     .card {
         font: 1em/1.35em "DM Sans", Inter, Helvetica;
-        width: 90%;
     } 
     .card-content {
         margin-top: 0;
@@ -166,6 +170,42 @@
         margin-top: 0;
         margin-bottom: 1rem;
         padding-bottom: 0;
+    }
+    .card-search {
+        --theme-ui-colors-primary: var(--theme-ui-colors-primary,#0066ff);
+        --theme-ui-colors-text: var(--theme-ui-colors-text,#2f363d);
+        --theme-ui-colors-background: var(--theme-ui-colors-background,#fff);
+        --theme-ui-colors-muted: var(--theme-ui-colors-muted,#f6f8fa);
+        --theme-ui-colors-border: var(--theme-ui-colors-border,#d1d5da);
+        --theme-ui-colors-icon: var(--theme-ui-colors-icon,#959da5);
+        box-sizing: inherit;
+        width: 100%;
+        margin: 0;
+        padding: 16px;
+        padding-left: 52px;
+        font-size: inherit;
+        line-height: 1;
+        font-family: inherit;
+        color: inherit;
+        background-color: var(--theme-ui-colors-background,#fff);
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
+        border: 0;
+        appearance: none;
+        outline: 0;
+        border-radius: 6px;
+    }
+    .search-box {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+    }
+    #search-icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 16px;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
     }
     time {
         color: dimgray;
@@ -222,77 +262,76 @@
             <button class="button is-large red-bg"><strong>Buying</strong></button>
         </section>
         <!-- Modal -->
-        <div class="card">
-            <div class="card-content">
-                <div class="control has-icons-left">
-                    <input class="input" type="text" placeholder="Search">
-                    <span class="icon is-left">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </span>
+        <div id="modal">
+            <div class="card">
+                <div class="card-content">
+                    <div class="control has-icons-left search-box">
+                        <div id="search-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-1hy7qas"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                        <input type="search" aria-label="Search" placeholder="Cari chatmu" value="" class="card-search">
+                    </div>
+                <div class="media">
+                    <div class="media-left">
+                    <figure class="image is-48x48">
+                        <img src="img/andrian-th.png" alt="Andrian">
+                    </figure>
+                    </div>
+                    <div class="media-content">
+                    <p class="title is-4">Andrian</p>
+                    <p class="subtitle is-6">@andrigamerz</p>
+                    </div>
+                </div>      
+                <div class="content">
+                    <time>1h ago</time>
+                    siang kak,
                 </div>
-                <hr>
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="img/andrian-th.png" alt="Andrian">
-                  </figure>
+                <div class="content">
+                    <time>1h ago</time>
+                    Sepedanya saya bayarin 5 jt dilepas gak kak??
                 </div>
-                <div class="media-content">
-                  <p class="title is-4">Andrian</p>
-                  <p class="subtitle is-6">@andrigamerz</p>
                 </div>
-              </div>      
-              <div class="content">
-                  <time>1h ago</time>
-                siang kak,
-              </div>
-              <div class="content">
-                  <time>1h ago</time>
-                  Sepedanya saya bayarin 5 jt dilepas gak kak??
-              </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="img/minto-th.png" alt="Minto">
-                  </figure>
+            <div class="card">
+                <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                    <figure class="image is-48x48">
+                        <img src="img/minto-th.png" alt="Minto">
+                    </figure>
+                    </div>
+                    <div class="media-content">
+                    <p class="title is-4">Minto</p>
+                    <p class="subtitle is-6">@mintobike08</p>
+                    </div>
                 </div>
-                <div class="media-content">
-                  <p class="title is-4">Minto</p>
-                  <p class="subtitle is-6">@mintobike08</p>
+                <div class="content">
+                    <time>9h ago</time>
+                    Hallo kak,
+                    <br>kalo boleh sepedanya 4,8 jt 💵 CASH 💵 
                 </div>
-              </div>
-              <div class="content">
-                  <time>9h ago</time>
-                Hallo kak,
-                <br>kalo boleh sepedanya 4,8 jt 💵 CASH 💵 
-              </div>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="img/adinda-th.png" alt="Placeholder image">
-                  </figure>
+            <div class="card">
+                <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                    <figure class="image is-48x48">
+                        <img src="img/adinda-th.png" alt="Placeholder image">
+                    </figure>
+                    </div>
+                    <div class="media-content">
+                    <p class="title is-4">Adinda</p>
+                    <p class="subtitle is-6">@dindaa</p>
+                    </div>
+                </div>      
+                <div class="content">
+                    <time>16h ago</time>
+                    Hai kak, aku minat sepedanya,
                 </div>
-                <div class="media-content">
-                  <p class="title is-4">Adinda</p>
-                  <p class="subtitle is-6">@dindaa</p>
+                <div class="content">
+                    <time>15h ago</time>
+                    4 juta ya kak 🥺
                 </div>
-              </div>      
-              <div class="content">
-                  <time>16h ago</time>
-                Hai kak, aku minat sepedanya,
-              </div>
-              <div class="content">
-                  <time>15h ago</time>
-                  4 juta ya kak 🥺
-              </div>
+                </div>
             </div>
         </div>
         <!-- /Modal -->

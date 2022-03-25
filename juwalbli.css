@@ -171,15 +171,7 @@ div.price {
     background-color: rgba(246, 246, 246, 1);
     border-radius: .72rem;
     box-shadow: 0 2px 5px 0 rgba(8, 8, 8, 0.232),0 2px 5px 0 rgba(8, 8, 8, 0.112);
-    z-index: 50;
-}
-#modal-chat.is-active, .modal-chat.is-active, .modal-chat.is-active {
-    display: fixed;
     z-index: 500;
-    top: 8rem;
-    transition-timing-function: ease out;
-    transition-property: top;
-    transition-duration: 300ms;
 }
 .modal-chat-wrapper {
     margin: 0 20px;
@@ -265,9 +257,10 @@ time {
 }
 
 section#desc.inactive {
-    top: -1000px;
-    opacity: 0.05;
     transition-timing-function: ease out;
-    transform: translate(0, -1080px);
+    transform: translate(0, -524px);
     transition-duration: 300ms;
+}
+#modal-chat.is-active, .modal-chat.is-active {
+    display: block;
 }

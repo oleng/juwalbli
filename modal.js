@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
       $el.addEventListener('click', function () {
         var target = $el.dataset.target;
         var $target = document.getElementById(target);
-        console.log($target)
+        console.log('$target:' + $target)
         rootEl.classList.add('is-clipped');
         $target.classList.add('is-active');
       });

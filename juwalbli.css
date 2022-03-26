@@ -53,7 +53,7 @@ body::-webkit-scrollbar {
     padding: 0;
     background-color: #cdc9c7;
     /* offset-x | offset-y | blur-radius | spread-radius | color */
-    box-shadow: 4px 2px 5px 0 rgba(8, 8, 8, 0.112);;
+    box-shadow: 2px 2px 5px 0 rgba(8, 8, 8, 0.112);;
 }
 #thumbnails {
     margin: 0.75em 24px;
@@ -277,6 +277,7 @@ section#desc.inactive {
     align-content: center;
     top: calc(50% - 120px - 6rem);
     left: calc(100% - 952px + 2.5rem + 240px);
+    cursor: pointer;
 }
 .image.is-square img {
     width: fit-content;
